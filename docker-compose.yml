@@ -1,47 +1,46 @@
 version: "3.8"
 
-services: 
+services:
   app:
-    build: 
+    build:
       context: .
-      dockerfile: ./Dockerfile 
+      dockerfile: ./Dockerfile
     container_name: app
-    depends_on: 
+    depends_on:
       - db
-    environment: 
+    environment:
       - M2_HOME=/root/.m2
       - MYSQL_HOST=db
       - MYSQL_USER=root
       - MYSQL_PASS=password
-      - MYSQL_DATABASE=cargarage
-    networks: 
-      - app 
+      - MYSQL_DATABASE=petclinic
+    networks:
+      - app
     ports:
       - 8080:8080
     volumes:
       - $HOME/.m2:/root/.m2
     restart: unless-stopped
-  
+
   db:
     image: mysql:8.0
     container_name: db
-    environment: 
-       - MYSQL_ROOT_PASSWORD=petclinic
+    environment:
+      - MYSQL_ROOT_PASSWORD=petclinic
       - MYSQL_ALLOW_EMPTY_PASSWORD=true
       - MYSQL_USER=petclinic
       - MYSQL_PASSWORD=petclinic
-      - MYSQL_DATABASE=petclinic
-    networks: 
+      - MYSQL_DATABASE=%
+    networks:
       - app
     ports:
       - 3306:3306
-    volumes: 
+    volumes:
       - dbdata:/var/lib/mysql
     command: --default-authentication-plugin=mysql_native_password
 
-networks: 
-  app: {} 
+networks:
+  app: {}
 
-volumes: 
+volumes:
   dbdata: {}
-
