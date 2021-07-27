@@ -1,5 +1,3 @@
-# https://githubmemory.com/repo/ruanbekker/aws-terraform-cicd-java-springboot
-
 # Kotlin version of the Spring PetClinic Sample Application
 
 [![Build Status](https://travis-ci.org/spring-petclinic/spring-petclinic-kotlin.png?branch=master)](https://travis-ci.org/spring-petclinic/spring-petclinic-kotlin/)

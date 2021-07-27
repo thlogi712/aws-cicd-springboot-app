@@ -25,7 +25,7 @@ variable "ecs_container_instance_type" {
 
 variable "codebuild_security_group_name" {
   type    = string
-  default = "vpc-codebuild" 
+  default = "vpc-codebuild"
 }
 
 variable "container_port" {
@@ -75,21 +75,22 @@ variable "github_branch" {
 
 variable "github_token" {
   type    = string
+  default = "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"
 }
 
 variable "route53_hosted_zone" {
   type    = string
-  default = "example.com" 
+  default = "envel_ray.com"
 }
 
 variable "route53_record_set" {
   type    = string
-  default = "www" 
+  default = "www"
 }
 
 variable "service_hostname" {
   type    = string
-  default = "www.example.com"
+  default = "www.envel_ray.com"
 }
 
 variable "codestar_connection_id" {
@@ -98,22 +99,22 @@ variable "codestar_connection_id" {
 }
 
 variable "codebuild_docker_image" {
-  type    = string 
+  type    = string
   default = "aws/codebuild/standard:5.0"
 }
 
 variable "codepipeline_source_stage_name" {
-  type    = string 
+  type    = string
   default = "Source"
 }
 
 variable "codepipeline_build_stage_name" {
-  type    = string 
+  type    = string
   default = "Build"
 }
 
 variable "codepipeline_deploy_stage_name" {
-  type    = string 
+  type    = string
   default = "Prod"
 }
 
@@ -129,12 +130,12 @@ variable "rds_subnet_group_name" {
 
 variable "rds_instance_type" {
   type    = string
-  default = "db.t2.micro" 
+  default = "db.t2.micro"
 }
 
 variable "platform_type" {
-  type       = string
-  default = "ecs" 
+  type    = string
+  default = "ecs"
 }
 
 variable "ssh_keypair_name" {

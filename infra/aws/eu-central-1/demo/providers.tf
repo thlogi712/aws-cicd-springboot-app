@@ -1,14 +1,8 @@
 terraform {
   required_providers {
     aws = {
-      version = ">= 2.7.0"
-      source = "hashicorp/aws"
-    }
-    random = {
       version = "~> 3.0"
-    }
-    null = {
-      version = "~> 3.0"
+      source  = "hashicorp/aws"
     }
     template = {
       version = "~> 2.1"
@@ -21,8 +15,8 @@ terraform {
 }
 
 provider "aws" {
-  region  = "eu-central-1"
-  profile = "petclinic_demo"
+  region                  = "eu-central-1"
+  profile                 = "EuCentral1User"
   shared_credentials_file = "~/.aws/credentials"
 }
 
@@ -32,5 +26,4 @@ provider "github" {
 }
 
 provider "template" {}
-provider "random" {}
-provider "null" {}
+
